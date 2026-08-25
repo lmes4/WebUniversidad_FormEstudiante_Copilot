@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro Estudiantes - Universidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Formulario de registro de estudiantes - Universidad" />
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Registro de Estudiantes</h1>
+      <p class="lead">Formulario para captura rápida y consistente de datos estudiantiles.</p>
+    </header>
+
+    <section class="card form-card" aria-labelledby="form-title">
+      <h2 id="form-title">Datos del Estudiante</h2>
+      <form id="student-form" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="ident">Identificación</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">🔑</span>
+              <input id="ident" name="ident" inputmode="text" autocomplete="off" required minlength="5" placeholder="Número o código" aria-describedby="ident-err" />
+            </div>
+            <div id="ident-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">✉️</span>
+              <input id="correo" name="correo" type="email" autocomplete="email" required placeholder="ejemplo@uni.edu" aria-describedby="correo-err" />
+            </div>
+            <div id="correo-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">👤</span>
+              <input id="nombre" name="nombre" required placeholder="Nombre(s)" aria-describedby="nombre-err" />
+            </div>
+            <div id="nombre-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="apellido">Apellido</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">👥</span>
+              <input id="apellido" name="apellido" required placeholder="Apellido(s)" aria-describedby="apellido-err" />
+            </div>
+            <div id="apellido-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="pais">País</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">🌍</span>
+              <select id="pais" name="pais" required aria-describedby="pais-err">
+                <option value="">-- Seleccionar país --</option>
+                <option>Argentina</option>
+                <option>Bolivia</option>
+                <option>Chile</option>
+                <option>Colombia</option>
+                <option>España</option>
+                <option>México</option>
+                <option>Perú</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div id="pais-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="carrera">Carrera</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">🎓</span>
+              <select id="carrera" name="carrera" required aria-describedby="carrera-err">
+                <option value="">-- Seleccionar carrera --</option>
+                <option>Ing. Informática</option>
+                <option>Ing. Electrónica</option>
+                <option>Ing. Telecomunicaciones</option>
+                <option>Ing. Robótica</option>
+                <option>Otra</option>
+              </select>
+            </div>
+            <div id="carrera-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="fnac">Fecha de nacimiento</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">📅</span>
+              <input id="fnac" name="fnac" type="date" required aria-describedby="fnac-err" />
+            </div>
+            <div id="fnac-err" class="error" aria-live="polite"></div>
+          </div>
+
+          <div class="field">
+            <label for="edad">Edad</label>
+            <div class="input-wrap">
+              <span class="icon" aria-hidden="true">🧭</span>
+              <input id="edad" name="edad" readonly value="—" aria-readonly="true" />
+            </div>
+            <div class="hint">Se calcula automáticamente</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btn-register" class="btn primary" type="submit">Registrar</button>
+          <button id="btn-clear" class="btn secondary" type="button">Limpiar</button>
+        </div>
+      </form>
+
+      <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="card table-card" aria-labelledby="table-title">
+      <h2 id="table-title">Estudiantes Registrados</h2>
+      <div class="table-wrap">
+        <table id="students-table">
+          <thead>
+            <tr>
+              <th>Identificación</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>País</th>
+              <th>Carrera</th>
+              <th>Fecha Nac.</th>
+              <th>Edad</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Universidad — Registro académico</small>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

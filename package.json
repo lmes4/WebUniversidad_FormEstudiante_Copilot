@@ -1,0 +1,14 @@
+{
+  "name": "copilot3-formularioestudiante",
+  "version": "1.0.0",
+  "description": "Formulario de registro de estudiantes con pruebas",
+  "main": "src/utils.js",
+  "scripts": {
+    "test": "jest --colors"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
